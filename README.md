@@ -1,3 +1,17 @@
+- 👋 Hi, I’m Nana Kwame Yiadom Boachie
+
+- 👀 I’m interested in tech
+
+- 🌱 I’m currently learning rust
+
+- 💞️ I’m looking to collaborate on building my own os
+
+- 📫 How to reach me linkedin
+
+- 😄 Pronouns: He/Him
+
+- ⚡ Fun fact: The distance of the atmosphere we see compared to the earth is the same proportion of an orange peel to an orange
+
 # relay_testing
 To aid in testing relay trip time for now
 
