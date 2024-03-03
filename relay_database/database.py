@@ -1,17 +1,26 @@
-#create a database file
-import mysql.connector
+import mariadb 
 
-mydb = mysql.connector.connect(
-  host="localhost",
-  user="relayuser",
-  password="TAIL",
-  database="relaydatabase"
-)
+conn = mariadb.connect(
+    user="db_user",
+    password="db_user_passwd",
+    host="localhost",
+    database="relay_database")
+cur = conn.cursor() 
 
-mycursor = mydb.cursor()
+#retrieving information 
+some_name = "SEL 421" 
+cur.execute("SELECT first_name,last_name FROM employees WHERE first_name=?", (some_name,)) 
 
-mycursor.execute("SELECT * FROM customers")
+for first_name, last_name in cur: 
+    print(f"First name: {first_name}, Last name: {last_name}")
+    
+#insert information 
+try: 
+    cur.execute("INSERT INTO employees (first_name,last_name) VALUES (?, ?)", ("Maria","DB")) 
+except mariadb.Error as e: 
+    print(f"Error: {e}")
 
-results = mycursor.fetchall()
-
-# work with results
+conn.commit() 
+print(f"Last Inserted ID: {cur.lastrowid}")
+    
+conn.close()
