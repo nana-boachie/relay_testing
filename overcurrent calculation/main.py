@@ -1,6 +1,4 @@
-import os
-
-os.system(functions.py)         
+import functions       
 
 def main():
     curves = ["A", "B", "C", "D"] 
@@ -20,13 +18,13 @@ def main():
 
 
     if curve == "A":
-        print(float(standard_inverse(x,y)))
+        print(float(functions.standard_inverse(x,y)))
     if curve == "B":
-        print(float(very_inverse(x,y)))
+        print(float(functions.very_inverse(x,y)))
     if curve == "C":
-        print(float(extremely_inverse(x,y)))
+        print(float(functions.extremely_inverse(x,y)))
     if curve == "D":
-        print(float(long_time_inverse(x,y)))
+        print(float(functions.long_time_inverse(x,y)))
      
 if __name__=="__main__":
     main()
