@@ -1,20 +1,19 @@
-#Overcurrent
-def long_time_inverse(PSM,TMS):# overcurrent
-    operating_time= TMS*(120/(((PSM))-1))
-    return operating_time
-
-def standard_inverse(PSM,TMS):# overcurrent
-    operating_time= TMS*(0.14/(((PSM)^0.02)-1))
-    return operating_time
-
-def very_inverse(PSM,TMS):# overcurrent
-    operating_time= TMS*(13.5/((PSM)-1))
-    return operating_time
-
-def extremely_inverse(PSM,TMS):# C
-    operating_time= TMS*(80/(((PSM)^2)-1))
+# Over current
+def long_time_inverse(psm, tms):  # A
+    operating_time = tms * (120 / (psm - 1))
     return operating_time
 
 
-#Distance 
+def standard_inverse(psm, tms):  # B
+    operating_time = tms * (0.14 / ((psm ** 0.02) - 1))
+    return operating_time
 
+
+def very_inverse(psm, tms):  # C
+    operating_time = tms * (13.5 / (psm - 1))
+    return operating_time
+
+
+def extremely_inverse(psm, tms):  # D
+    operating_time = tms * (80 / ((psm ** 2) - 1))
+    return operating_time
